@@ -25,20 +25,20 @@ fi
 rm ./a.out 2>/dev/null
 
 echo "====================================================="
-echo "1. Compiles without warnings with -Wall -Wextra flags"
+echo "1. Compilation warnings are in the section below"
 echo "====================================================="
 
 g++ -g -std=c++11 -Wall -Wextra -Wno-sign-compare *.cpp
 
 echo "====================================================="
-echo "2. Runs and produces correct output"
+echo "2. Program output are in the section below"
 echo "====================================================="
 
 # Execute program
 $EXEC_PROGRAM
 
 echo "====================================================="
-echo "3. clang-tidy warnings are fixed"
+echo "3. clang-tidy warnings are in the section below"
 echo "====================================================="
 
 if hash clang-tidy 2>/dev/null; then
@@ -48,7 +48,7 @@ else
 fi
 
 echo "====================================================="
-echo "4. clang-format does not find any formatting issues"
+echo "4. clang-format warnings are in the section below"
 echo "====================================================="
 
 if hash clang-format 2>/dev/null; then
@@ -64,7 +64,7 @@ else
 fi
 
 echo "====================================================="
-echo "5. No memory leaks using g++"
+echo "5. Memory leak issues are in the section below"
 echo "====================================================="
 
 rm ./a.out 2>/dev/null
@@ -75,7 +75,7 @@ $EXEC_PROGRAM > /dev/null
 
 
 echo "====================================================="
-echo "6. No memory leaks using valgrind, look for \"definitely lost\" "
+echo "6. valgrind memory test is in the section below. Look for \"definitely lost\" "
 echo "====================================================="
 
 rm ./a.out 2>/dev/null
@@ -91,7 +91,7 @@ else
 fi
 
 echo "====================================================="
-echo "7. Tests have full code coverage"
+echo "7. Code coverage information is in the section below"
 echo "====================================================="
 
 if [ -f "check-code-coverage.sh" ]; then
