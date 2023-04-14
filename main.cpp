@@ -8,9 +8,6 @@
 
 using namespace std;
 
-// forward delaration, defined in library-commands.cpp
-void execute_commands(const string &filename);
-
 void test1() {
   // Pokedex pdx;
   // stringstream strs;
@@ -71,17 +68,31 @@ void test4() {
   // cout << "test4 complete" << endl;
 }
 
-int main(int argc, char *argv[]) {
+void test5() {
+  // Pokedex pdx;
+  // // should print error messages
+  // pdx.front();
+  // pdx.back();
+  // pdx.at(3);
+  // pdx.at(-9);
+  // pdx.erase(5);
+  // pdx.erase(-10);
+  // pdx.pop_back();
+  // assert(pdx.size() == 0);
+  // pdx.insert("Charmander");
+  // pdx.at(6);
+  // pdx.erase(2);
+  // assert(pdx.size() == 1);
+  // pdx.erase(0);
+  // assert(pdx.size() == 0);
+  // cout << "test5 complete" << endl;
+}
+
+int main() {
   test1();
   test2();
   test3();
   test4();
-  if (argc >= 1) {
-    for (int i = 1; i < argc; ++i) {
-      string commandFile = argv[i];
-      cout << "*** Executing commands from " << commandFile << endl;
-      execute_commands(commandFile);
-    }
-  }
+  test5();
   cout << "Done." << endl;
 }
